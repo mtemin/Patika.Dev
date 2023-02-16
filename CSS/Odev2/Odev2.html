@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+           
+            display: block;
+            text-align: center;
+            margin: auto;
+            
+        }
+        
+        .btn{
+            padding: 7px;
+            background-color: lightgray;
+            border: 1px solid black;
+            border-radius: 5px;
+            display: inline-block;
+            font-style: normal;
+            color: black;
+            text-decoration: none;
+        }
+
+       
+
+        #searchbox{
+            margin-bottom: 10px;
+            background-color: rgba(225, 225, 225, 1);
+            padding: 20px;
+        }
+
+        #inputSearch{
+            margin: auto;
+            
+        }
+
+        /* #container{
+            width: 80%;
+            display: block;
+            text-align: center;
+            margin: auto;
+            
+        } */
+
+        .column{
+            display: inline-block;
+            width: 33%;
+            padding: 10px 0px;
+            margin-bottom: 30px;
+            
+        }
+
+        .column1{
+            background-color: lightblue;
+        }
+
+        .column2{
+            background-color: lightskyblue;
+        }
+
+        .column3{
+            background-color: lightseagreen;
+        }
+
+        input{
+            display: block;
+            margin: auto;
+        }
+
+        #footer{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+        }
+        
+        .column a{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5px;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+    
+    <div class="logo">
+        <img src="googlebeta (1).jpg" alt="">
+    </div>
+    <div id="searchbox">
+        <p style="margin-bottom:5px">Search the web using google!</p>
+        <input style="margin-bottom: 5px;" type="search" name="" id="inputSearch">
+        <a href="#" class="btn">Google Search</a>
+        <a href="#" class="btn">I'm feeling lucky</a>
+    </div>
+    <div id="footer">
+    <div class="column column1">
+        <a href="#">Special Searches</a>
+        <a href="">Stanford Search</a>
+        <a href="">Linux Search</a>
+    </div>
+    <div class="column column2">
+        <a href="#">Help!</a>
+        <a href="#">About Google!</a>
+        <a href="#">Company Info</a>
+        <a href="#">Company Logo</a>
+    </div>
+    <div class="column column3">
+        <p style="margin-bottom: 5px;">Get Google updates monthly</p>
+        <input type="email" name="e-mail" placeholder="your e-mail" id="" style="margin-bottom: 5px;">
+        <a href="#" class="btn" style="display: inline-block;">Subscribe</a>
+        <a href="#">Archive</a>
+    </div>
+</div>
+<p>Copyright 1998 Google Inc.</p>
+    
+</div>
+    
+</body>
+</html>
