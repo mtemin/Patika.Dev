@@ -1,43 +1,51 @@
-*{
+/* *{
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+} */
+
+body{
+    background-color: #E9ECEF;
 }
 
+.headertitle{
+    margin: 0px 8px;
+}
 
-#container{
+/* #container{
     width: 80%;
     margin:auto;
-}
+} */
 
-#header tr td a{
+/* #header tr td a{
     margin: 10px;
     font-size:20px;
     color: green;
-}
+} */
 
-h1{
+/* h1{
     color: darkred;
     text-align: center;
-}
+} */
 
-h2{
+/* h2{
     color: blue;
     text-align: center;
-}
+} */
 
-h3{
+/* h3{
     color: yellowgreen;
-}
+} */
 
-.urun{
+/* .urun{
     width: 20%;
     display: block;
     margin: auto;
-}
-.urunbaslik{
+} */
+
+/* .urunbaslik{
     margin: 20px 0;
     list-style-position: inside;
     font-weight: 500;
     font-size: 16px;
-}
+} */
 
