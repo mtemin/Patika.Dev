@@ -24,6 +24,9 @@ public class Main {
         muzik = gradeInput.nextInt();
 
         int sonuc = (matematik + fizik + kimya + turkce + tarih + muzik) / 6;
-        System.out.print("Ortalamanız " + sonuc);
+        System.out.println("Ortalamanız " + sonuc);
+        String finalResult = sonuc > 60 ? "Geçtiniz" : "Kaldınız" ;
+        System.out.println(finalResult);
+
     }
 }
