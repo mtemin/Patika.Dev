@@ -11,6 +11,10 @@ let taskList = [
   { id: 4, name: 'Görev 4', state:"pending" },
 ];
 
+if(localStorage.getItem("taskList") !== null){
+  taskList = JSON.parse(localStorage.getItem("taskList"));
+};
+
 displayTasks();
 
 
@@ -27,7 +31,7 @@ function displayTasks() {
       <li id = "task-${task.id}" class="list-item px-5 d-flex justify-content-between list-group-item">
       <div>
       
-      <input id = "input${task.id}" onclick = "updateTaskStatus(this.id)"class="form-check-input px-0 mx-0 border-secondary" type="checkbox" value="">
+      <input id = "input${task.id}" onclick = "updateTaskStatus(this)"class="form-check-input px-0 mx-0 border-secondary" type="checkbox" value="">
       
       <label for = "input${task.id}" class="form-check-label" style = "display:inline-block; margin:0px 20px; padding:0;">${task.name}</label>
       </div>
@@ -52,31 +56,27 @@ let isEditModeOn = false;
 let idToEdit;
 
 function addTask() {
-  
-  console.log("ekleme")
     if(!isEditModeOn){
     if (toDoInput.value != "") {
-      taskList.push({ id: taskList.length + 1, name: toDoInput.value });
+      taskList.push({ id: taskList.length + 1, name: toDoInput.value, state: "pending"});
     } else {
     alert("Görev bilgisi boş olamaz");
     };
     displayTasks();
     toDoInput.value = "";
-  }else{
-    console.log("güncelleme");
-    console.log(isEditModeOn);
+  }else{ //güncelleme
     for (let i = 0; i < taskList.length; i++) {
       const task = taskList[i];
-      console.log(idToEdit);
       if(task.id === idToEdit){
         task.name = toDoInput.value;
         toDoInput.value = "";
         addButton.innerText = "Ekle";
-        displayTasks();
       };
     };
+    displayTasks();
     isEditModeOn = false;
   };
+  localStorage.setItem("taskList", JSON.stringify(taskList));
 };
 
 
@@ -88,7 +88,9 @@ function removeTask(id) {
     };
   };
   taskList.splice(idToRemove, 1);
+  localStorage.setItem("taskList", JSON.stringify(taskList));
   displayTasks();
+
 };
 
 function editTask(id, name){
@@ -97,13 +99,26 @@ function editTask(id, name){
   console.log(name);
   addButton.innerText = "Güncelle";
   toDoInput.value = name;
+  localStorage.setItem("taskList", JSON.stringify(taskList));
 
 };
 
 function updateTaskStatus(selectedTask){
-
+  console.log(selectedTask)
+  // selectedTask.
+  let selectedTaskName = selectedTask.nextElementSibling.outerHTML;
   
-  console.log(selectedTask.nextElementSibling);
+  if((selectedTask.parentElement).parentElement.classList.includes("bg-info")){
+    (selectedTask.parentElement).parentElement.classList.remove("bg-info")
+  }else{
+    (selectedTask.parentElement).parentElement.classList.add("bg-info");
+  }
+
+  console.log((selectedTask.parentElement).parentElement.classList)
+  console.log(selectedTaskName);
 
 
 };
+
+
+
