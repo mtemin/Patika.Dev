@@ -121,8 +121,8 @@
 .navbar--night ul li a {
   color: #c8c8c8; }
 .navbar--night ul li:hover {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
   background-color: #c8c8c8; }
   .navbar--night ul li:hover :nth-child(n) {
     color: #353535; }
