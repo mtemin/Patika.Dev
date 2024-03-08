@@ -1,120 +1,95 @@
-*{
-    font-family: Ubuntu,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+    font-family: Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     box-sizing: border-box;
 }
 
-
-
-
-
-.container{
+.container {
     width: 80%;
     margin: 0 auto;
 }
 
-.header{
+.header {
     text-align: center;
     margin-top: 3.5rem;
     font-size: 1.4rem;
 }
 
-.display-none{
+.display-none {
     display: none;
 }
 
-
-
-.navbar{
+.navbar {
     margin: 0;
 
- ul{
-    display: flex;
-    justify-content: center;
-    margin: 2.5rem 0;
-    // padding: 0;
-    list-style-type: none;
-    
-    li{ 
-        background-color: inherit;
-        display: inline-block;
-        list-style: none;
-        text-decoration: none;
-        // margin: 10px;
-        padding: 10px;
-        font-weight: 500;
-        text-transform: uppercase;
-        border-radius: 2px;
+    ul {
+        display: flex;
+        justify-content: center;
+        margin: 2.5rem 0;
+        list-style-type: none;
 
-    a{
-        text-decoration-line: none;
-        color: black;
-    }
-    }
-    // :first-child{
-    //     border-left: 1px solid gray;
-    //     // border-radius: 10px 0px 0px 10px;
-        
-    // }
-    
-    // :last-child{
-    //     border-right: 1px solid gray;
-    //     // border-radius: 0px 10px 10px 0px;
+        li {
+            background-color: inherit;
+            display: inline-block;
+            list-style: none;
+            text-decoration: none;
+            // margin: 10px;
+            padding: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            border-radius: 2px;
 
-    // }
-
+            a {
+                text-decoration-line: none;
+                color: black;
+            }
+        }
     }
 
 }
 
-
-
-
-
-
-.menu{
+.menu {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     flex-wrap: wrap;
-    
+
 }
 
-
-.menu__item{
+.menu__item {
     display: flex;
     justify-content: space-between;
     // align-items: center;
-    width: 700px;
+    width: 500px;
     height: 200px;
     margin: 1rem;
     flex-wrap: wrap;
     padding: 1rem;
     border-radius: 5px;
-    
+
 }
 
-
-
-.menu__item__img{
+.menu__item__img {
     display: inline-block;
-    width: 200px;
+    width: 35%;
     height: 100%;
-    img{
+
+    img {
         object-fit: cover;
         width: 100%;
         height: 100%;
         // max-height: 100%;
-    }  
+    }
 }
 
-.menu__item__column{
+.menu__item__column {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 400px;
+    width: 65%;
+    padding-left:10px;
 }
 
-.menu__item__title{
+.menu__item__title {
     display: inline-block;
     margin-top: 0;
     width: 50%;
@@ -122,29 +97,30 @@
 }
 
 
-.menu__item__description{
-    p{
+.menu__item__description {
+    p {
         margin: 0;
         padding: 0;
         text-align: justify;
-        
+
     }
 }
 
-.menu__item__price{
+.menu__item__price {
     align-self: flex-end;
     vertical-align: bottom;
     font-weight: 600;
     font-size: large;
-    margin:0;
-    p{
+    margin: 0;
+
+    p {
         margin: 0;
     }
 }
 
 @media only screen and (max-width: 600px) {
 
-    .menu__item{
+    .menu__item {
         width: 100%;
         height: 200%;
         display: flex;
@@ -152,85 +128,116 @@
 
     }
 
-    .menu__item__img{
+    .menu__item__img {
         width: 100%;
-        img{
+
+        img {
             width: 100%;
 
         }
-    
+
     }
-    .menu__item__title{
+
+    .menu__item__title {
         margin-top: .8rem;
     }
-  }
+}
 
-  //  MODIFIER START *************************  MODIFIER
+@media screen and (min-width: 320px) and (max-width:600px){
+    .menu__item__column{
+        width: 100%;
+    }
+}
 
-.background--day{
+
+@media screen and (min-width:600px) and (max-width:1340px) {
+.menu__item{
+    width: 100%;
+    height: 400px;
+    
+    .menu__item__img{
+        width: 100%;
+        height: 50%;
+        margin-bottom: 10px;
+    }
+
+    .menu__item__column{
+        width: 100%;
+    }
+}
+    
+}
+
+//  MODIFIER START *************************  MODIFIER
+
+.background--day {
     background-color: rgb(235, 235, 235);
 }
 
-.background--night{
+.background--night {
     background-color: #202020;
 }
 
-.font--night{
-    color: rgb(235,235,235);
+.font--night {
+    color: rgb(235, 235, 235);
 }
 
-.header--day{
+.header--day {
     color: #393d4b;
 }
 
-.header--night{
-    color: rgb(200,200,200);
+.header--night {
+    color: rgb(200, 200, 200);
 
 }
 
-.navbar--day{
-    ul{
-        li{
-            &:hover{
+.navbar--day {
+    ul {
+        li {
+            &:hover {
                 border-top: 1px solid black;
                 border-bottom: 1px solid black;
                 background-color: black;
-                :nth-child(n){
+
+                :nth-child(n) {
                     color: white;
-                    
-                }
-            }
-            }
-        }
-}
 
-
-.navbar--night{
-    ul{
-        li{
-            a{
-                color: rgb(200, 200, 200);
-            }
-            &:hover{
-                border-top: 1px solid black;
-                border-bottom: 1px solid black;
-                background-color: rgb(200, 200, 200);
-                :nth-child(n){
-                    color: #353535;
-                    
                 }
             }
         }
     }
 }
 
-.menu__item--night{
-        background-color: #303030;
-        border: 1px solid black;
-        &:hover{
-            box-shadow: 0px 3px 15px #424242;
+
+.navbar--night {
+    ul {
+        li {
+            a {
+                color: rgb(200, 200, 200);
+            }
+
+            &:hover {
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                background-color: rgb(200, 200, 200);
+
+                :nth-child(n) {
+                    color: #353535;
+
+                }
+            }
         }
+    }
 }
-    
+
+.menu__item--night {
+    background-color: #303030;
+    border: 1px solid black;
+
+    &:hover {
+        box-shadow: 0px 3px 15px #424242;
+    }
+}
+
 
 //  MODIFIER END *************************  MODIFIER
