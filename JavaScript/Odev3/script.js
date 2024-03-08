@@ -172,15 +172,13 @@ function fillNavbar() {
 
 }
 
-
-
 function filterCountries(clickedCountry) {
   let menuItems = document.querySelectorAll('.menu__item')
   for (const item of menuItems) {
     item.style.display = "none";
   }
   for (const food of foodList) {
-    if (clickedCountry == food.country) {
+    if (clickedCountry === food.country) {
       foodListFiltered.push(food);
       let newMenuItem = `
          <article class="menu__item menu__item--night">
@@ -196,6 +194,6 @@ function filterCountries(clickedCountry) {
         `;
       menuDOM.innerHTML += newMenuItem;
       console.log(foodListFiltered);
-    }     
+    }
   }
 }
